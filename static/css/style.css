@@ -17,7 +17,7 @@ body {
   overflow-x: hidden;
   width: 100%;
   margin: 0 auto;
-  background-color: #09090a;
+  background-color: #333; /*#09090a;*/
 }
 
 .bg {
@@ -124,6 +124,47 @@ header {
   background-color: #5a635d;
 }
 
+.toggle_block {
+  display: flex;
+}
+
+
+.menu_toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid red;
+  padding: 0 3px;
+
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+}
+
+.menu_toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateX(1px) translateY(6px);
+    top: 7px;
+    width: 20px;
+    
+}
+
+.menu_toggle.active .bar:nth-child(2) {
+    transform: rotate(-45deg) translateX(1px) translateY(-3px);
+    top: -7px;
+    width: 20px;
+}
+
+.menu_toggle.active .bar:nth-child(3) {
+    opacity: 0;
+}
+
 @media (max-width:760px) {
   header {
     /*position: fixed;*/
@@ -140,24 +181,45 @@ header {
     flex-direction: column;
     /*background-color: #3913b6;*/
     width: 100%;
+    padding-bottom: 10px;
     
   }
 
   .menu_list {
     /*position: fixed;*/
-    display:flex;
+    /*display:flex;*/
+    display: none;
     flex-direction: column;
-    /*background-color: #da18bd;*/
+    background-color: #333;
     width: 100%;
-    
+
+    /*position: relative;*/
+    /*top: 60px;*/
+    /*right: 0;*/
+    /*width: 200px;*/
+
+  }
+
+  .menu_list.active {
+    display: flex;
+  }
+
+  .menu_toggle {
+    display: flex;
+    /*color: red;
+    background-color: green;*/
   }
 
   .callActionHeader {
     /*position: fixed;*/
-    display:flex;
+    display: none;
     flex-direction: column;
     /*background-color: #8cda18;*/
     
+  }
+
+  #about {
+    flex-direction: column-reverse;
   }
 }
 
@@ -216,17 +278,22 @@ main {
 
 #about {
   width: 60%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  /*display: grid;
+  grid-template-columns: repeat(2, 1fr);*/
   gap: 2px;
  /* background-color: blue;*/
-  /* border: 2px solid red;*/
+  /*border: 2px solid red;*/
  text-align: left;
   
 }
 
 .AboutContent {
   flex: 1;
+  width: 50%;
   /*border: 1px solid white;*/
   /*background-color: #5a635d;*/
   backdrop-filter: blur(10px);
