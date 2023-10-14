@@ -133,7 +133,7 @@ header {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  border: 1px solid red;
+ /* border: 1px solid red;*/
   padding: 0 3px;
 
   align-items: center;
@@ -149,7 +149,7 @@ header {
 }
 
 .menu_toggle.active .bar:nth-child(1) {
-    transform: rotate(45deg) translateX(1px) translateY(6px);
+    transform: rotate(45deg) translateX(4px) translateY(5px);
     top: 7px;
     width: 20px;
     
@@ -190,7 +190,7 @@ header {
     /*display:flex;*/
     display: none;
     flex-direction: column;
-    background-color: #333;
+    /*background-color: #333;*/
     width: 100%;
 
     /*position: relative;*/
@@ -219,7 +219,16 @@ header {
   }
 
   #about {
-    flex-direction: column-reverse;
+    display:block;
+    /*flex-direction: column;*/
+    /*background-color: #b61313;*/
+    width: 100%;
+    
+  }
+
+  #AboutPicture {
+    width: 500px;
+    display: none;
   }
 }
 
@@ -279,7 +288,7 @@ main {
 #about {
   width: 60%;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: flex-start;
   /*display: grid;
@@ -363,7 +372,7 @@ h2 {
 }
 
 .AboutContent ul li {
-  list-style-image: url('../images/emojis/facebook_like.svg');
+  list-style-image: url('assets/images/icons/actionButton/next.svg');
   /*border: 5px solid dodgerblue;*/
   text-align: left;
   /*
@@ -374,7 +383,7 @@ h2 {
 }
 
 .AboutContent ul li::marker {
-  color: red;
+  color: rgb(255, 183, 0);
 
 }
 
